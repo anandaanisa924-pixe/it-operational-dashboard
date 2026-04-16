@@ -185,8 +185,8 @@ body {
     min-height: 0;
 }
 
-/* ===== HEADER CARD COLORS - GARIS BAWAH FULL WIDTH & TEBAL ===== */
-/* Calendar Card - ketebalan 3px (sama seperti card lain) */
+/* ===== HEADER CARD COLORS  ===== */
+
 .calendar-card h2 {
     font-size: 0.85rem;
     font-weight: 600;
@@ -276,7 +276,7 @@ body {
     background: #9ed4ff;
 }
 
-/* ===== CALENDAR CARD - FLAT LIST STYLE ===== */
+/* ===== CALENDAR CARD  ===== */
 .calendar-card .card-content {
     overflow-y: auto;
     max-height: 100%;
@@ -360,7 +360,7 @@ body {
     white-space: nowrap;
 }
 
-/* Scrollbar umum - Dark Mode (ukuran 5px) */
+
 .calendar-card .card-content::-webkit-scrollbar,
 .calendar-week-view::-webkit-scrollbar,
 .birthday-items::-webkit-scrollbar,
@@ -591,18 +591,18 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 6px;
-    gap: 8px; /* tambahan jarak antara h2 dan lock badge */
+    gap: 8px; 
 }
 .daily-review-header h2 {
     flex: 1;
     margin: 0;
-    padding-right: 8px; /* beri ruang agar tidak menempel ke lock badge */
+    padding-right: 8px; 
 }
 .lock-badge {
     font-size: 0.8rem;
     cursor: help;
     opacity: 0.8;
-    flex-shrink: 0; /* agar tidak mengecil saat h2 panjang */
+    flex-shrink: 0; 
 }
 .daily-review-list {
     flex: 1;
@@ -610,7 +610,7 @@ body {
     margin: 4px 0 8px 0;
     min-height: 0;
 }
-/* Ukuran scrollbar Daily Review disamakan dengan card lain (5px) */
+
 .daily-review-list::-webkit-scrollbar {
     width: 5px;
 }
@@ -825,7 +825,7 @@ body.light-mode .card h2 {
     border-bottom-color: #4caf50 !important;
     color: #2e7d32 !important;
 }
-/* Perbaikan warna garis bawah birthday card di light mode (hijau, bukan biru) */
+
 body.light-mode .birthday-card h2::after {
     background: #4caf50 !important;
 }
@@ -854,7 +854,7 @@ body.light-mode .calendar-event-time-right {
     color: #475569;
 }
 
-/* LIGHT MODE - Birthday Filter (Perbaikan) */
+/* LIGHT MODE - Birthday Filter */
 body.light-mode .birthday-filter {
     background: #e8f5e9;
     color: #1b5e20 !important;
@@ -950,8 +950,8 @@ body.light-mode .modal-button:hover {
     background: #388e3c;
 }
 
-/* ===== LIGHT MODE SCROLLBAR - WARNA HIJAU SENADA DENGAN GARIS CARD ===== */
-/* Scrollbar untuk semua elemen di light mode dengan ukuran 5px dan warna hijau */
+/* ===== LIGHT MODE SCROLLBAR ===== */
+
 body.light-mode .calendar-card .card-content::-webkit-scrollbar-thumb,
 body.light-mode .calendar-week-view::-webkit-scrollbar-thumb,
 body.light-mode .birthday-items::-webkit-scrollbar-thumb,
@@ -1190,7 +1190,7 @@ body.light-mode .pin-hint {
     color: #999 !important;
 }
 
-/* Animations yang sudah ada (jika belum ada) */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }

@@ -138,7 +138,7 @@ function BirthdayCard() {
                 </select>
             </div>
 
-            {/* CONTENT - Gunakan wrapper birthday-content */}
+            
             <div className="birthday-content">
                 {filtered.length === 0 ? (
                     <div className="no-birthday">

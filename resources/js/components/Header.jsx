@@ -11,7 +11,7 @@ function Header() {
     return () => clearInterval(timer);
   }, []);
 
-  // Ubah class body dan simpan ke localStorage saat theme berubah
+  
   useEffect(() => {
     document.body.className = theme === 'light' ? 'light-mode' : '';
     localStorage.setItem('theme', theme);
