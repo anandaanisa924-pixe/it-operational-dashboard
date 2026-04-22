@@ -109,8 +109,10 @@ function CalendarCard() {
             <p style={{ fontSize: '0.7rem', color: '#b0c4de' }}>Memuat jadwal...</p>
           </div>
         ) : sortedKeys.length === 0 ? (
-          <div className="card-content">
-            <p style={{ fontSize: '0.7rem', color: '#b0c4de' }}>Tidak ada event dalam 7 hari ke depan</p>
+          <div className="card-content" style={{ flex: 1, minHeight: 0 }}>
+            <div className="no-event-card">
+              <div className="no-event-text">Tidak Ada Event Dalam 7 Hari Ke Depan</div>
+            </div>
           </div>
         ) : (
           <div className="card-content">

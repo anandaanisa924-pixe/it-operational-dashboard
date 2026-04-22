@@ -135,36 +135,6 @@ body {
     flex-direction: column;
 }
 
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-/* ===== BIRTHDAY FILTER - SUPPORT LIGHT/DARK MODE ===== */
-.birthday-filter {
-    background: #2d3a5a;
-    color: #e0e0e0 !important;
-    border: 1px solid #4a5568;
-    border-radius: 6px;
-    padding: 4px 8px;
-    font-size: 0.65rem;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.2s ease;
-}
-
-.birthday-filter:hover {
-    background: #3b4b6b;
-    border-color: #6ab0fe;
-}
-
-.birthday-filter option {
-    background: #1a2639;
-    color: #e0e0e0;
-}
-
 /* Middle Section Cards */
 .middle-section .card:nth-child(1) {
     flex: 1.3;
@@ -175,17 +145,19 @@ body {
     min-height: 0;
 }
 
+
 /* Right Section Cards */
-.right-section .card:nth-child(1) {
-    flex: 0.9;
-    min-height: 0;
-}
-.right-section .card:nth-child(2) {
-    flex: 1.1;
+.right-section .card:nth-child(1) {  
+    flex: 0.5;  
     min-height: 0;
 }
 
-/* ===== HEADER CARD COLORS  ===== */
+.right-section .card:nth-child(2) { 
+    flex: 0.6;  
+    min-height: 0;
+}
+
+/* ===== HEADER CARD COLORS ===== */
 
 .calendar-card h2 {
     font-size: 0.85rem;
@@ -247,9 +219,9 @@ body {
     font-size: 0.85rem;
     font-weight: 600;
     color: #b47aea !important;
-    margin-bottom: 6px;
-    padding-bottom: 3px;
-    border-bottom: 3px solid #c79cf0;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 3px solid #c67cc9;
     flex-shrink: 0;
     width: 100%;
     display: block;
@@ -257,26 +229,45 @@ body {
     padding-right: 0;
 }
 
-.birthday-card h2 {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #7fc9ff !important;
-    margin-bottom: 6px;
-    padding-bottom: 6px;
-    position: relative;
-    width: 100%;
+/* ===== HEADER BIRTHDAY CARD  ===== */
+.birthday-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
 }
-.birthday-card h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 3px;
-    background: #9ed4ff;
+.birthday-card .card-header h2 {
+    flex: 1;
+    min-width: 140px;
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+.birthday-filter {
+    flex-shrink: 0;
+    max-width: 100%;
+    min-width: 85px;
+    background: #2d3a5a;
+    color: #e0e0e0 !important;
+    border: 1px solid #c67cc9;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 0.65rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+.birthday-filter:hover {
+    background: #3b4b6b;
+    border-color: #c59aee;
+}
+.birthday-filter option {
+    background: #1a2639;
+    color: #e0e0e0;
 }
 
-/* ===== CALENDAR CARD  ===== */
+/* ===== CALENDAR CARD ===== */
 .calendar-card .card-content {
     overflow-y: auto;
     max-height: 100%;
@@ -361,6 +352,8 @@ body {
 }
 
 
+
+/* Scrollbar umum - Dark Mode */
 .calendar-card .card-content::-webkit-scrollbar,
 .calendar-week-view::-webkit-scrollbar,
 .birthday-items::-webkit-scrollbar,
@@ -496,7 +489,7 @@ body {
     transform: scale(0.98);
 }
 
-/* ===== BIRTHDAY CARD ===== */
+/* ===== BIRTHDAY CARD CONTENT ===== */
 .birthday-content {
     display: flex;
     flex-direction: column;
@@ -578,7 +571,12 @@ body {
     padding: 12px;
     margin: auto 0;
 }
-
+.birthday-items {
+    padding-right: 6px; 
+}
+.birthday-item {
+    margin-right: 2px; 
+}
 /* ===== DAILY REVIEW CARD ===== */
 .daily-review-card {
     flex: 1;
@@ -591,18 +589,18 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 6px;
-    gap: 8px; 
+    gap: 8px;
 }
 .daily-review-header h2 {
     flex: 1;
     margin: 0;
-    padding-right: 8px; 
+    padding-right: 8px;
 }
 .lock-badge {
     font-size: 0.8rem;
     cursor: help;
     opacity: 0.8;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 .daily-review-list {
     flex: 1;
@@ -610,7 +608,6 @@ body {
     margin: 4px 0 8px 0;
     min-height: 0;
 }
-
 .daily-review-list::-webkit-scrollbar {
     width: 5px;
 }
@@ -652,76 +649,168 @@ body {
     color: #9ca3af;
 }
 
-/* ===== WORK ORDERS CARD ===== */
-.work-section {
-    margin-bottom: 5px;
+.daily-review-list {
+    padding-right: 6px;
 }
-.work-section h3 {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #a0c0e0 !important;
-    margin-bottom: 2px;
-    text-transform: uppercase;
-}
-.work-list {
-    list-style: none;
-}
-.work-list li {
-    padding: 2px 0;
+.review-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 6px 0;
     border-bottom: 1px solid #4a5568;
-    font-size: 0.65rem;
-    line-height: 1.2;
+    font-size: 0.7rem;
 }
-.status-badge {
-    font-size: 0.8rem;
+.review-item span:last-child {
     margin-left: 8px;
+    flex-shrink: 0;
 }
-.status-red {
-    color: #ff4d4d !important;
-    text-shadow: 0 0 2px rgba(0,0,0,0.5);
-}
-.status-yellow {
-    color: #ffd966 !important;
-}
-.status-green {
-    color: #48bb78 !important;
-}
+
 
 /* ===== TICKET STATUS CARD ===== */
+.ticket-status-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .ticket-list {
     list-style: none;
+    margin: 0;
 }
+
 .ticket-list li {
-    padding: 3px 0;
+    padding: 3px 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #4a5568;
+    border-bottom: 1px solid rgba(74, 85, 104, 0.3);
     font-size: 0.7rem;
-}
-.ticket-value {
-    font-weight: 600;
-    color: #a0c0e0 !important;
-    background: #2d3a5a;
-    padding: 2px 6px;
-    border-radius: 15px;
-    font-size: 0.65rem;
+    font-weight: 500;
 }
 
-/* ===== INFRASTRUCTURE CARD ===== */
-.infrastructure-item {
-    padding: 2px 0;
-    border-bottom: 1px solid #4a5568;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.65rem;
+.ticket-list li:hover {
+    background: rgba(106, 176, 254, 0.05);
+    border-radius: 6px;
+    padding-left: 8px;
 }
-.infrastructure-item.warning .value {
-    color: #f5d742 !important;
-    font-weight: 600;
+
+.ticket-value {
+    font-weight: 700;
+    color: #6ab0fe !important;
+    background: rgba(106, 176, 254, 0.15);
+    padding: 1px 8px;
+    border-radius: 16px;
+    font-size: 0.7rem;
+    min-width: 40px;
+    text-align: center;
+    font-family: monospace;
+}
+
+
+
+/* ===== SOLVE TIME CARD  ===== */
+.solve-time-card {
+    margin-top: auto;  
+    margin-bottom: auto;  
+    padding: 8px 10px;
+    background: linear-gradient(135deg, rgba(106, 176, 254, 0.12) 0%, rgba(106, 176, 254, 0.04) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(106, 176, 254, 0.25);
+}
+
+.solve-time-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 4px;
+}
+
+.solve-time-icon {
+    font-size: 0.8rem;
+}
+
+.solve-time-title {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.solve-time-display {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #6ab0fe !important;
+    font-family: monospace;
+    padding: 3px 5px;
+    border-radius: 8px;
+    margin: 2px 0;
+    line-height: 1.25;
+}
+
+.solve-time-footer {
+    text-align: center;
+    font-size: 0.6rem;
+    padding-top: 3px;
+    margin-top: 1px;
+    line-height: 1.15;
+}
+/* Light Mode Styles */
+body.light-mode .ticket-value {
+    background: rgba(76, 175, 80, 0.12);
+    color: #2e7d32 !important;
+}
+
+body.light-mode .solve-time-card {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, rgba(76, 175, 80, 0.02) 100%);
+    border-color: rgba(76, 175, 80, 0.25);
+}
+
+body.light-mode .solve-time-card::before {
+    background: linear-gradient(90deg, #4caf50, #2e7d32, #4caf50);
+}
+
+body.light-mode .solve-time-card:hover {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.12) 0%, rgba(76, 175, 80, 0.04) 100%);
+    border-color: rgba(76, 175, 80, 0.4);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+}
+
+body.light-mode .solve-time-title {
+    color: #4a6f4a;
+}
+
+body.light-mode .solve-time-display {
+    color: #2e7d32 !important;
+    background: rgba(76, 175, 80, 0.06);
+}
+
+body.light-mode .solve-time-footer {
+    color: #6b8f6b;
+    border-top-color: rgba(76, 175, 80, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .solve-time-display {
+        font-size: 0.8rem;
+        padding: 10px 6px;
+    }
+    
+    .solve-time-card {
+        padding: 12px 10px;
+    }
+    
+    .ticket-list li {
+        padding: 8px 4px;
+        font-size: 0.7rem;
+    }
+    
+    .ticket-value {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+        min-width: 45px;
+    }
 }
 
 /* ===== STATUS FOOTER ===== */
@@ -794,6 +883,17 @@ body {
     #app { height: auto; padding: 15px; }
     .dashboard { height: auto; }
     .birthday-items { max-height: 240px; }
+    .birthday-card .card-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .birthday-card .card-header h2 {
+        white-space: normal;
+        text-align: center;
+    }
+    .birthday-filter {
+        width: 100%;
+    }
 }
 
 /* ========== LIGHT MODE ========== */
@@ -818,18 +918,27 @@ body.light-mode .card {
     background: white;
     border-color: #2e7d32;
 }
-body.light-mode .card * {
+
+body.light-mode .calendar-card h2 {
     color: #1b5e20 !important;
 }
+
+body.light-mode .calendar-card :not(h2) {
+    color: #1b5e20 !important;
+}
+
+body.light-mode .card:not(.calendar-card) * {
+    color: #1b5e20 !important;
+}
+
 body.light-mode .card h2 {
     border-bottom-color: #4caf50 !important;
-    color: #2e7d32 !important;
 }
 
 body.light-mode .birthday-card h2::after {
     background: #4caf50 !important;
 }
-/* Light mode calendar */
+
 body.light-mode .calendar-day-group {
     background: rgba(200, 230, 200, 0.3);
     border-color: rgba(100, 150, 100, 0.3);
@@ -854,24 +963,20 @@ body.light-mode .calendar-event-time-right {
     color: #475569;
 }
 
-/* LIGHT MODE - Birthday Filter */
 body.light-mode .birthday-filter {
     background: #e8f5e9;
     color: #1b5e20 !important;
-    border-color: #81c784;
-}
-
-body.light-mode .birthday-filter:hover {
-    background: #c8e6c9;
     border-color: #4caf50;
 }
-
+body.light-mode .birthday-filter:hover {
+    background: #c8e6c9;
+    border-color: #2e7d32;
+}
 body.light-mode .birthday-filter option {
     background: white;
     color: #1b5e20;
 }
 
-/* Light mode birthday card */
 body.light-mode .birthday-item {
     background: #f1f8e9;
     border-color: #a5d6a7;
@@ -883,12 +988,61 @@ body.light-mode .no-birthday {
     background: #f1f8e9;
     color: #1b5e20 !important;
 }
+
+
+/* ===== NO EVENT CALENDAR===== */
+.no-event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #2d3a5a;
+    border-radius: 12px;
+    padding: 24px 16px;
+    margin: 8px 0;
+    border: 1px solid rgba(106, 176, 254, 0.3);
+    transition: all 0.2s ease;
+}
+
+.no-event-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e8f5e9 !important;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.no-event-subtext {
+    font-size: 0.65rem;
+    color: #b0c4de !important;
+    opacity: 0.8;
+}
+
+/* Light Mode */
+body.light-mode .no-event-card {
+    background: #f1f8e9;
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+body.light-mode .no-event-text {
+    color: #2e7d32 !important;
+}
+
+body.light-mode .no-event-subtext {
+    color: #1b5e20 !important;
+    opacity: 0.7;
+}
+
+body.light-mode .no-event-icon {
+    opacity: 0.7;
+}
 body.light-mode .birthday-date {
     background: #e8f5e9;
     color: #1b5e20;
     border: 1px solid #a5d6a7;
 }
-/* Light mode lainnya */
+
 body.light-mode .status-footer {
     background: white;
     border-color: #2e7d32;
@@ -916,13 +1070,10 @@ body.light-mode .ticket-value {
     background: #e8f5e9;
     color: #2e7d32 !important;
 }
-body.light-mode .infrastructure-item.warning .value {
-    color: #f57c00 !important;
-}
 body.light-mode .theme-toggle {
     color: #1b5e20;
 }
-/* Light mode modal */
+
 body.light-mode .modal-content {
     background: white;
     border-color: #2e7d32;
@@ -950,8 +1101,6 @@ body.light-mode .modal-button:hover {
     background: #388e3c;
 }
 
-/* ===== LIGHT MODE SCROLLBAR ===== */
-
 body.light-mode .calendar-card .card-content::-webkit-scrollbar-thumb,
 body.light-mode .calendar-week-view::-webkit-scrollbar-thumb,
 body.light-mode .birthday-items::-webkit-scrollbar-thumb,
@@ -967,7 +1116,6 @@ body.light-mode .daily-review-list::-webkit-scrollbar-thumb:hover {
     background: #4caf50;
 }
 
-/* Track scrollbar di light mode */
 body.light-mode .daily-review-list::-webkit-scrollbar-track {
     background: #e8f5e9;
 }
@@ -978,231 +1126,280 @@ body.light-mode .modal-content::-webkit-scrollbar-track {
     background: rgba(200, 230, 200, 0.3);
 }
 
-/* ===== PIN MODAL (Built-in Dashboard) ===== */
-.pin-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #181936 0%, #18143d 100%);
+/* PIN GATE  */
+.pin-container-saloka {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    animation: fadeIn 0.3s ease;
+    height: 100vh;
+    background: linear-gradient(135deg, #181936 0%, #18143d 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-.pin-container {
-    background: #1a2639;
-    border-radius: 24px;
-    padding: 40px 32px;
-    width: 90%;
-    max-width: 400px;
+.pin-card-saloka {
+    background: #fffffff5;
+    border-radius: 32px;
+    padding: 40px 35px;
+    width: 380px;
     text-align: center;
-    border: 2px solid #4a5568;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    animation: slideUp 0.3s ease;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(198, 164, 63, 0.4);
+    position: relative;
 }
-
-.pin-container.shake {
-    animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
-}
-
-.pin-header {
-    margin-bottom: 32px;
-}
-
-.pin-lock-icon {
-    font-size: 56px;
-    display: block;
-    margin-bottom: 16px;
-}
-
-.pin-header h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #ffd966, #ffb347);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0 0 8px 0;
-    border: none !important;
-}
-
-.pin-subtitle {
-    font-size: 0.8rem;
-    color: #9ca3af !important;
-    margin: 0;
-}
-
-.pin-input-wrapper {
-    margin-bottom: 24px;
-}
-
-.pin-input-field {
-    width: 100%;
-    padding: 16px;
-    font-size: 2rem;
-    text-align: center;
-    letter-spacing: 12px;
-    background: #2d3a5a;
-    border: 2px solid #4a5568;
-    border-radius: 12px;
-    color: white !important;
-    font-weight: bold;
-    outline: none;
-    transition: all 0.2s;
-}
-
-.pin-input-field:focus {
-    border-color: #6ab0fe;
-    box-shadow: 0 0 0 3px rgba(106, 176, 254, 0.2);
-}
-
-.pin-input-field::placeholder {
-    letter-spacing: normal;
-    font-size: 1rem;
-    color: #6c7a9a;
-}
-
-.pin-dots {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 16px;
-}
-
-.pin-dot {
-    font-size: 1.2rem;
-    color: #4a5568;
-    transition: all 0.2s;
-}
-
-.pin-dot.filled {
-    color: #6ab0fe;
-    text-shadow: 0 0 8px rgba(106, 176, 254, 0.5);
-}
-
-.pin-error-message {
-    color: #ff6b6b !important;
-    font-size: 0.85rem;
+.pin-logo {
     margin-bottom: 20px;
-    padding: 8px;
-    background: rgba(255, 107, 107, 0.1);
-    border-radius: 8px;
 }
-
-.pin-submit-button {
+.saloka-icon {
+    font-size: 48px;
+    background: #2B5F4A;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    color: #F5F0E7;
+    box-shadow: 0 8px 20px rgba(43, 95, 74, 0.3);
+}
+.pin-card-saloka h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2B5F4A;
+    margin-bottom: 25px;
+}
+.pin-card-saloka input {
     width: 100%;
-    padding: 14px;
-    background: linear-gradient(135deg, #6ab0fe 0%, #4a90d9 100%);
+    padding: 14px 16px;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 8px;
+    background: white;
+    border: 2px solid #e2dccd;
+    border-radius: 60px;
+    color: #2B5F4A;
+    font-weight: 600;
+    outline: none;
+}
+.pin-card-saloka input:focus {
+    border-color: #C6A43F;
+    box-shadow: 0 0 0 3px rgba(198, 164, 63, 0.2);
+}
+.pin-card-saloka button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(105deg, #2B5F4A, #1E4A38);
     border: none;
-    border-radius: 12px;
-    color: white !important;
+    border-radius: 60px;
+    color: white;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: 0.2s;
 }
-
-.pin-submit-button:hover {
+.pin-card-saloka button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(106, 176, 254, 0.3);
+    box-shadow: 0 8px 20px rgba(43, 95, 74, 0.4);
 }
-
-.pin-submit-button:active {
-    transform: translateY(0);
+.pin-error-saloka {
+    color: #c0392b;
+    font-size: 0.8rem;
+    margin-top: 12px;
+    background: #ffe6e5;
+    padding: 6px 12px;
+    border-radius: 40px;
+    display: inline-block;
 }
-
 .pin-footer {
-    margin-top: 24px;
-    padding-top: 16px;
-    border-top: 1px solid #4a5568;
+    margin-top: 30px;
+    font-size: 0.75rem;
+    color: #8B6B4D;
+    border-top: 1px solid #e2dccd;
+    padding-top: 20px;
+}
+.saloka-brand {
+    font-weight: 700;
+    color: #C6A43F;
+    margin-top: 4px;
+}
+.pin-logo img {
+    max-width: 120px;
+    height: auto;
+}
+.pin-logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2B5F4A;
+    letter-spacing: 2px;
 }
 
-.pin-hint {
+/* ===== WORK ORDERS CARD ===== */
+.work-section {
+    margin-bottom: 2px;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.work-section h3 {
     font-size: 0.7rem;
-    color: #6c7a9a !important;
+    font-weight: 600;
+    color: #a0c0e0 !important;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    flex-shrink: 0;
 }
 
-/* Light Mode untuk PIN Modal */
-body.light-mode .pin-overlay {
-    background: linear-gradient(135deg, #57855b 0%, #50a052 100%);
+.work-list-container {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    max-height: 200px;
 }
 
-body.light-mode .pin-container {
-    background: white;
-    border-color: #2e7d32;
+.work-list {
+    list-style: none;
 }
 
-body.light-mode .pin-header h2 {
-    background: linear-gradient(135deg, #2e7d32, #4caf50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.work-list-item {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    padding: 6px 8px;
+    border-bottom: 1px solid #4a5568;
+    font-size: 0.7rem;
+    cursor: pointer;
+    min-width: 0;
 }
 
-body.light-mode .pin-subtitle {
-    color: #666 !important;
+.work-list-item:hover {
+    background: rgba(106, 176, 254, 0.15);
 }
 
-body.light-mode .pin-input-field {
-    background: #f1f8e9;
-    border-color: #a5d6a7;
-    color: #1b5e20 !important;
+.work-item-description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
 }
 
-body.light-mode .pin-input-field:focus {
-    border-color: #4caf50;
+.status-badge {
+    font-size: 0.8rem;
+    justify-self: end;
+    align-self: center;
 }
 
-body.light-mode .pin-input-field::placeholder {
-    color: #a5d6a7;
+.status-red {
+    color: #ff4d4d !important;
+    text-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+.status-yellow {
+    color: #ffd966 !important;
+}
+.status-green {
+    color: #48bb78 !important;
 }
 
-body.light-mode .pin-dot {
-    color: #c8e6c9;
+.empty-message {
+    padding: 8px;
+    text-align: center;
+    color: #b0c4de !important;
+    font-style: italic;
+    font-size: 0.7rem;
 }
 
-body.light-mode .pin-dot.filled {
-    color: #4caf50;
+.work-list-container::-webkit-scrollbar {
+    width: 5px;
 }
 
-body.light-mode .pin-error-message {
-    color: #f44336 !important;
-    background: rgba(244, 67, 54, 0.1);
+.work-list-container::-webkit-scrollbar-track {
+    background: #2d3a5a;
+    border-radius: 10px;
 }
 
-body.light-mode .pin-submit-button {
-    background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+.work-list-container::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 10px;
 }
 
-body.light-mode .pin-footer {
-    border-top-color: #e8f5e9;
+.work-list-container::-webkit-scrollbar-thumb:hover {
+    background: #6c7a9a;
 }
 
-body.light-mode .pin-hint {
-    color: #999 !important;
+.wo-modal {
+    max-width: 500px;
 }
 
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.job-description {
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-right: 8px;
+    text-align: justify; 
+    line-height: 1.5;    
 }
 
-@keyframes slideUp {
-    from { 
-        transform: translateY(30px); 
-        opacity: 0; 
-    }
-    to { 
-        transform: translateY(0); 
-        opacity: 1; 
-    }
+.job-description::-webkit-scrollbar {
+    width: 3px;
+}
+
+.job-description::-webkit-scrollbar-track {
+    background: #2d3a5a;
+    border-radius: 10px;
+}
+
+.job-description::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 10px;
+}
+
+body.light-mode .work-list-container::-webkit-scrollbar-track {
+    background: #e8f5e9;
+}
+
+body.light-mode .work-list-container::-webkit-scrollbar-thumb {
+    background: #66bb6a;
+}
+
+body.light-mode .work-list-container::-webkit-scrollbar-thumb:hover {
+    background: #4caf50;
+}
+
+body.light-mode .work-list-item:hover {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+body.light-mode .work-item-description {
+    color: #1b5e20;
+}
+
+body.light-mode .empty-message {
+    color: #2e7d32 !important;
+}
+
+body.light-mode .job-description::-webkit-scrollbar-track {
+    background: #e8f5e9;
+}
+
+body.light-mode .job-description::-webkit-scrollbar-thumb {
+    background: #66bb6a;
+}
+/* Jumlah WO  */
+.wo-count {
+    font-size: 0.65rem;
+    font-weight: normal;
+    background: rgba(255,255,255,0.2);
+    padding: 2px 6px;
+    border-radius: 20px;
+    margin-left: 8px;
+    
+}
+
+body.light-mode .wo-count {
+    background: rgba(0, 0, 0, 0.08);
+    color: #2e7d32 !important;
 }
